@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mwSlider - Vanilla Javascript slider</title>
+    <link rel="stylesheet" href="./mwSlider.css" type="text/css" />
+    <style>
+        body {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .sliderContainer {
+            width: calc(50vw - 30px);
+            height: 100%;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mwSlider {
+            width: 100%;
+            height: 100%;
+            min-height: 50vh;
+        }
+
+        .sliderContainer:nth-child(even) .mwSlider {
+            background: #8ec6ff;
+        }
+
+        .sliderContainer:nth-child(even) > p {
+            background: #ccdced;
+        }
+
+        .sliderContainer:nth-child(odd) .mwSlider {
+            background: #017148;
+            color: white;
+        }
+
+        .sliderContainer:nth-child(odd) > p {
+            background: #d3ede3;
+        }
+
+        .sliderContainer > p {
+            width: calc(100% - 40px);
+            padding: 10px 20px;
+            margin: 0;
+            text-align: center;
+            border-bottom: 1px solid #a4c3b7;
+        }
+
+        .sliderContainer > p:last-child {
+            padding: 20px;
+            border-bottom: 0;
+        }
+
+        .sliderContainer > p > b {
+            background: #bad6e9;
+            padding: 2px 5px;
+            margin: 1px 0;
+            border: 1px solid grey;
+            border-radius: 2px;
+            display: inline-flex;
+        }
+
+        .mwSlider.mwTicker .slides > a {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sliderContainer">
+        <h2>Default Slider</h2>
+        <div class="mwSlider">
+            <div><h2>Default Slider</h2></div>
+            <div>Add a slider to anything by simply adding the class: <br/><b>.mwSlider</b> to any parent element</div>
+        </div>
+        <p>Add a slider to anything by simply adding the class: <b>.mwSlider</b> to any parent element</p>
+
+    </div>
+    <div class="sliderContainer">
+        <h2>Scrolling slider</h2>
+        <div class="mwSlider mwScroll">
+            <div><h2>Scrolling slider</h2></div>
+            <div>Can be applied by simply adding the additional class: <br/><b>.mwScroll</b> to the sliders parent element</div>
+            <div>And everything just slides, including back to the start</div>
+        </div>
+        <p>Can be applied by simply adding the additional class: <b>.mwScroll</b> to the sliders <b>.mwSlider</b> element</p>
+    </div>
+    <div class="sliderContainer">
+        <h2>Fade Slider</h2>
+        <div class="mwSlider mwFade">
+            <div><h2>Fade Slider</h2></div>
+            <div>Can be applied by simply adding the additional class: <br/><b>.mwFade</b> to the sliders parent element</div>
+            <div>This is the default slider action yes, <br/>but specifying it will help keep track of what slider does what action especially if multiple sliders exist doing different transitions</div>
+            <div>Because of course, if it's worth doing, it's worth doing properly</div>
+        </div>
+        <p>Can be applied by simply adding the additional class: <b>.mwFade</b> to the sliders <b>.mwSlider</b> element</p>
+    </div>
+    <div class="sliderContainer">
+        <h2>Auto Transition Slider</h2>
+        <div class="mwSlider mwScroll mwAuto">
+            <div><h2>Auto Transition Slider</h2></div>
+            <div>To make the slider auto transition simply add the class: <br/><b>.mwAuto</b> to the sliders parent element</div>
+            <div>This can be applied to the Fade Slider too</div>
+        </div>
+        <p>To make the slider auto transition simply add the class: <b>.mwAuto</b> to the sliders <b>.mwSlider</b> element</p>
+    </div>
+    
+    <div class="sliderContainer">
+        <h2>Pause on Hover Slider</h2>
+        <div class="mwSlider mwFade mwAutoPause">
+            <div><h2>Pause on Hover Slider</h2></div>
+            <div>To allow the auto transition to be paused when hovering over the slider, simply add the class: <br/><b>.mwHoverPause</b> to the sliders parent element</div>
+            <div>Only use either this or the Auto Transition class, not both together (unknown concenques may follow otherwise)</div>
+            <div>This can be applied to the Scroll Slider too</div>
+        </div>
+        <p>To allow the auto transition to be paused when hovering over the slider, simply add the class: <b>.mwHoverPause</b> to the sliders <b>.mwSlider</b> element.</p> 
+        <p>Only use either <b>.mwHoverPause</b> or <b>.mwAuto</b> class, not both together (unknown concenques may follow otherwise)</p>
+    </div>
+
+    <div class="sliderContainer">
+        <h2>Ticker Slider</h2>
+        <div class="mwSlider mwTicker">
+            <a><div>1</div></a>
+            <a><div>2</div></a>
+            <a><div>3</div></a>
+            <a><div>4</div></a>
+            <a><div>5</div></a>
+            <!-- <a><div>6</div></a>
+            <a><div>7</div></a>
+            <a><div>8</div></a>
+            <a><div>9</div></a>
+            <a><div>10</div></a>           -->
+        </div>
+        <p>To create a ticker slider that also pauses when hovered over, simply add the class: <b>.mwTicker</b> to the sliders <b>.mwSlider</b> element.</p> 
+        <!-- <p>Only use either <b>.mwHoverPause</b> or <b>.mwAuto</b> class, not both together (unknown concenques may follow otherwise)</p> -->
+    </div>
+    
+
+    
+</body>
+<script type="text/javascript" src="./mwSlider.js"></script>
+<!-- <script type="text/javascript" src="./mwSlider-slideBuild.js"></script> -->
+</html>

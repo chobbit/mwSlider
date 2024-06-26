@@ -1,0 +1,212 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mwSlider {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    color: black;
+    position: relative;
+}
+
+.mwSlider .slides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.mwSlider .slides > div {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    transition: all 0.5s;
+    opacity: 0;
+    min-height: 200px;
+}
+
+.mwSlider.mwFade .slides > div {
+    padding: 0 70px;
+}
+
+.mwSlider.mwScroll .slides > div {
+    margin: 0 13%;
+    width: 74%;
+}
+
+.mwSlider .prevArrow, .mwSlider .nextArrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    height: 40px;
+    text-align: center;
+    background: black;
+    color: white;
+    position: absolute;
+    top: calc(50% - 30px);
+    margin: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 100%;
+    transition: all 0.2s;
+    z-index: 2;
+    font-weight: 900;
+}
+
+.mwSlider .prevArrow:hover, .mwSlider .nextArrow:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+    
+}
+
+.mwSlider .prevArrow:active, .mwSlider .nextArrow:active {
+    transform: scale(1.2);
+}
+
+.mwSlider .prevArrow {
+    left: 0;
+    padding: 0 3px 0 0;
+}
+
+.mwSlider .nextArrow {
+    right: 0;
+    padding: 0 0 0 3px;
+}
+
+.mwSlider .show {
+    display: flex !important;
+}
+
+.mwSlider .navigationPoints {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding: 5px 20px;
+    width: calc(100% - 40px);
+    background: #00000036;
+}
+
+.mwSlider .navigationPoints > .items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 0 0 0 1px;
+    background: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 100%;
+    transition: all 0.3s;
+    width: 25px;
+    height: 25px;
+}
+
+.mwSlider .navigationPoints > .items:not(.active):hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+.mwSlider .items.active {
+    background: white;
+    color: black;
+    border: 1px solid white;
+}
+
+.mwSlider .items:active:not(.active) {
+    transform: scale(1.2);
+}
+
+
+/* Scrolling */
+
+.mwSlider.mwScroll {
+    overflow: hidden;
+}
+
+.mwSlider.mwScroll .slides {
+    position: relative;
+    transition: all 0.7s;
+    left: 100%;
+}
+
+.mwSlider.mwScroll .slides > div {
+    display: flex;
+    opacity: 1;
+    flex: none;
+}
+
+
+/* Ticker */
+
+.mwSlider.mwTicker {
+    overflow: hidden;
+    justify-content: flex-start;
+}
+
+.tickerWrap {
+    display: flex;
+    position: relative;
+    left: 0;
+}
+
+.mwSlider.mwTicker .slides {
+    position: relative;
+    width: auto;
+    justify-content: flex-start;
+    left: 0;
+}
+
+.mwSlider.mwTicker .slides > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 300px;
+    height: 150px;
+    margin: 0 30px;
+    min-height: 0;
+    border: 1px solid;
+    position: relative;
+}
+
+.mwSlider.mwTicker .prevArrow, .mwSlider.mwTicker .nextArrow, .mwSlider.mwTicker .navigationPoints {
+    display: none;
+    transition: all 0.2s ease 0s;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+
+
+
+/* Mobile styling */
+@media (max-width: 767px) {
+    .sliderContainer {
+        width: calc(100% - 20px) !important;
+    }
+
+    .mwSlider .prevArrow, .mwSlider .nextArrow {
+        width: 27px;
+        height: 30px;
+        font-size: 20px;
+        top: calc(50% - 15px);
+        margin: 0 5px;
+    }
+
+
+}
